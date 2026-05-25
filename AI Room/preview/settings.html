@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div><div class="center-radiance"></div><div class="grain"></div>
+    <aside class="sidebar"><div class="brand"><div class="brand-mark"><svg viewBox="0 0 24 24"><path d="M12 3.2 6.1 6.6v6.8l5.9 3.4 5.9-3.4V6.6L12 3.2Z"></path><path d="M6.1 6.6 12 10l5.9-3.4"></path><path d="M12 10v6.8"></path></svg></div><span>AI Room</span></div><nav class="sidebar-nav"><a class="nav-item" href="./index.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M5 10.2 12 4l7 6.2"></path><path d="M7.2 9.6v8h9.6v-8"></path></svg></span><span>首页</span></a><a class="nav-item" href="./hall.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="2.4"></circle><circle cx="16" cy="8" r="2.4"></circle><circle cx="8" cy="16" r="2.4"></circle><circle cx="16" cy="16" r="2.4"></circle></svg></span><span>大厅</span></a><a class="nav-item" href="./my-room.html"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="5.5" y="5.5" width="13" height="13" rx="2.8"></rect><path d="M9 5.5v13"></path><path d="M15 5.5v13"></path></svg></span><span>我的房间</span></a></nav><div class="sidebar-tools"><a class="tool" href="./profile.html" aria-label="意识档案"><svg class="tool-icon-fill" viewBox="0 0 1024 1024" aria-hidden="true"><path d="M170.666667 341.333333v443.665067A34.133333 34.133333 0 0 0 204.834133 819.2h614.331734A34.2016 34.2016 0 0 0 853.333333 784.9984V375.534933A34.133333 34.133333 0 0 0 819.165867 341.333333H170.666667z m648.4992-68.266666A102.4 102.4 0 0 1 921.6 375.534933v409.463467A102.468267 102.468267 0 0 1 819.165867 887.466667H204.834133A102.4 102.4 0 0 1 102.4 784.9984V273.066667h716.765867z"></path><path d="M170.666667 204.8v68.266667h307.2V204.8H170.666667z m-68.266667-0.034133A68.1472 68.1472 0 0 1 170.513067 136.533333H478.037333A68.096 68.096 0 0 1 546.133333 204.765867v68.334933A68.1472 68.1472 0 0 1 478.020267 341.333333H170.496A68.096 68.096 0 0 1 102.4 273.1008V204.765867z"></path><path d="M631.466667 665.6m34.133333 0l102.4 0q34.133333 0 34.133333 34.133333l0 0q0 34.133333-34.133333 34.133334l-102.4 0q-34.133333 0-34.133333-34.133334l0 0q0-34.133333 34.133333-34.133333Z" class="tool-icon-accent"></path></svg></a><a class="tool" href="./settings.html" aria-label="设置"><svg class="tool-icon-fill" viewBox="0 0 1024 1024" aria-hidden="true"><path d="M469.333333 60.693333a85.333333 85.333333 0 0 1 85.333334 0l326.826666 188.714667a85.333333 85.333333 0 0 1 42.666667 73.898667v377.386666a85.333333 85.333333 0 0 1-42.666667 73.898667L554.666667 963.306667a85.333333 85.333333 0 0 1-85.333334 0L142.506667 774.592a85.333333 85.333333 0 0 1-42.666667-73.898667v-377.386666a85.333333 85.333333 0 0 1 42.666667-73.898667z m42.666667 73.898667L185.173333 323.306667v377.386666L512 889.408l326.826667-188.714667v-377.386666L512 134.592zM512 341.333333a170.666667 170.666667 0 1 1 0 341.333334 170.666667 170.666667 0 0 1 0-341.333334z m0 85.333334a85.333333 85.333333 0 1 0 0 170.666666 85.333333 85.333333 0 0 0 0-170.666666z"></path></svg></a><a class="tool" href="./logout.html" aria-label="退出登录"><svg viewBox="0 0 24 24"><path d="M9 5.6H6.8A1.8 1.8 0 0 0 5 7.4v9.2a1.8 1.8 0 0 0 1.8 1.8H9"></path><path d="M13 8.2 17 12l-4 3.8"></path><path d="M10 12h7"></path></svg></a></div></aside>
+    <main class="viewport">
+      <header class="topbar"><div></div><div class="top-actions"><a class="top-icon" href="./search.html" aria-label="搜索"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="5.2"></circle><path d="m15.2 15.2 3.6 3.6"></path></svg></a><a class="top-icon" href="./messages.html" aria-label="收件箱"><svg viewBox="0 0 24 24"><rect x="4.8" y="6.6" width="14.4" height="10.8" rx="2.2"></rect><path d="m6.8 8.3 5.2 4.4 5.2-4.4"></path></svg></a></div></header>
+      <section class="inner-page settings-page">
+        <div class="settings-shell">
+          <aside class="simple-card settings-nav">
+            <button class="settings-nav-item is-active" type="button" data-settings-target="general"><span>通用</span><span>›</span></button>
+            <button class="settings-nav-item" type="button" data-settings-target="personal"><span>个性化</span><span>›</span></button>
+            <button class="settings-nav-item" type="button" data-settings-target="notifications"><span>通知</span><span>›</span></button>
+            <button class="settings-nav-item" type="button" data-settings-target="data"><span>数据控制</span><span>›</span></button>
+            <button class="settings-nav-item" type="button" data-settings-target="account"><span>账号</span><span>›</span></button>
+          </aside>
+          <div class="settings-main">
+            <div class="simple-card settings-section is-active" data-settings-panel="general">
+              <div class="settings-section-head">
+                <h2>通用</h2>
+                <p>控制账号显示、默认进入页面和基础使用方式。</p>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>显示名称</strong><span>这个名字会出现在你的创建房间和部分公开状态中。</span></div>
+                <div class="settings-control"><input type="text" value="Wang Jiajia" /></div>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>默认进入页</strong><span>打开 AI Room 时默认进入的页面。</span></div>
+                <div class="settings-control"><select><option>首页</option><option>大厅</option><option>我的房间</option></select></div>
+              </div>
+            </div>
+            <div class="simple-card settings-section" data-settings-panel="personal">
+              <div class="settings-section-head">
+                <h2>个性化</h2>
+                <p>管理界面呈现、偏好和更符合你使用习惯的细节设置。</p>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>界面密度</strong><span>调整列表和对话信息的显示节奏。</span></div>
+                <div class="settings-control"><select><option>标准</option><option>紧凑</option><option>舒展</option></select></div>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>默认主题气质</strong><span>影响默认页面的氛围和视觉偏好。</span></div>
+                <div class="settings-control"><select><option>柔和</option><option>冷静</option><option>明亮</option></select></div>
+              </div>
+            </div>
+            <div class="simple-card settings-section" data-settings-panel="notifications">
+              <div class="settings-section-head">
+                <h2>通知</h2>
+                <p>像 GPT 设置一样，把提醒相关选项集中放在一起。</p>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>空间邀请提醒</strong><span>收到新的房间邀请时推送提醒。</span></div>
+                <label class="settings-inline-toggle"><input type="checkbox" checked /><span>已开启</span></label>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>续聊消息提醒</strong><span>对话被继续或有人回应你留下的话时提醒。</span></div>
+                <label class="settings-inline-toggle"><input type="checkbox" checked /><span>已开启</span></label>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>系统消息静默</strong><span>减少非关键系统消息的打扰。</span></div>
+                <label class="settings-inline-toggle"><input type="checkbox" /><span>未开启</span></label>
+              </div>
+            </div>
+            <div class="simple-card settings-section" data-settings-panel="data">
+              <div class="settings-section-head">
+                <h2>数据控制</h2>
+                <p>控制搜索、收件箱和房间使用记录的保留方式。</p>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>搜索历史</strong><span>决定是否保留你的搜索记录用于快速回看。</span></div>
+                <label class="settings-inline-toggle"><input type="checkbox" checked /><span>已保留</span></label>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>收件箱归档策略</strong><span>设置已读消息的默认整理方式。</span></div>
+                <div class="settings-control"><select><option>自动归档</option><option>手动整理</option><option>永久保留</option></select></div>
+              </div>
+            </div>
+            <div class="simple-card settings-section" data-settings-panel="account">
+              <div class="settings-section-head">
+                <h2>账号</h2>
+                <p>控制在线状态、同步和账号安全。</p>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>在线状态</strong><span>决定别人是否能看到你当前在线。</span></div>
+                <div class="settings-control"><select><option>当前账号在线</option><option>隐身</option><option>暂时离开</option></select></div>
+              </div>
+              <div class="settings-row">
+                <div class="settings-copy"><strong>数据同步</strong><span>控制房间设置、消息和收藏的同步策略。</span></div>
+                <div class="settings-control"><select><option>自动同步</option><option>仅 Wi‑Fi</option><option>手动</option></select></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./nav-state.js"></script>
+  </body>
+</html>
