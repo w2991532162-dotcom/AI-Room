@@ -90,32 +90,32 @@
       </summary>
       <div class="room-ai-fields">
         <label class="room-field">
-          <span>AI名称</span>
+          <span>AI Name</span>
           <input type="text" data-ai-field="name" value="${escapeHtml(seed.name || `AI ${aiCounter}`)}" />
         </label>
         <label class="room-field">
-          <span>AI的Prompt</span>
+          <span>AI Prompt</span>
           <textarea data-ai-field="prompt" rows="4">${escapeHtml(seed.prompt || form.prompt.value)}</textarea>
         </label>
         <label class="room-field">
-          <span>回复风格（可选）</span>
-          <textarea data-ai-field="style" rows="3">${escapeHtml(seed.style || "温柔、清晰、有陪伴感")}</textarea>
+          <span>Response Style (Optional)</span>
+          <textarea data-ai-field="style" rows="3">${escapeHtml(seed.style || "gentle, clear, companionable")}</textarea>
         </label>
         <label class="room-field">
-          <span>AI模型选择</span>
+          <span>AI Model Selection</span>
           <select data-ai-field="provider">
-            <option value="claude-style" ${meta.provider === "claude-style" ? "selected" : ""}>Claude 风格</option>
+            <option value="claude-style" ${meta.provider === "claude-style" ? "selected" : ""}>Claude Style</option>
             <option value="gemini" ${meta.provider === "gemini" ? "selected" : ""}>Gemini Flash</option>
             <option value="deepseek" ${meta.provider === "deepseek" ? "selected" : ""}>DeepSeek</option>
             <option value="groq" ${meta.provider === "groq" ? "selected" : ""}>Groq / Llama</option>
           </select>
         </label>
         <label class="room-field">
-          <span>AI API（可选）</span>
+          <span>AI API (Optional)</span>
           <input type="password" data-ai-field="apiKey" value="${escapeHtml(seed.apiKey || "")}" autocomplete="off" />
         </label>
         <div class="create-space-ai-actions">
-          <button class="room-ghost-button" type="button" data-action="remove-create-ai">删除这个 AI</button>
+          <button class="room-ghost-button" type="button" data-action="remove-create-ai">Remove this AI</button>
         </div>
       </div>
     `;
@@ -130,7 +130,7 @@
       if (summary) summary.textContent = name;
     });
     if (preview.aiCount) {
-      preview.aiCount.textContent = `${cards.length} 位 AI`;
+      preview.aiCount.textContent = `${cards.length} AIs`;
     }
   };
 
@@ -138,26 +138,26 @@
     const meta = typeMeta[form.roomType.value] || typeMeta["room-insomnia"];
     if (preview.cover) preview.cover.src = meta.coverImage;
     if (preview.stamp) preview.stamp.textContent = meta.stamp;
-    if (preview.title) preview.title.textContent = form.roomName.value.trim() || "未命名房间";
-    if (preview.description) preview.description.textContent = form.description.value.trim() || "给你的房间补一段介绍。";
-    if (preview.visibility) preview.visibility.textContent = form.visibility.value === "private" ? "私密" : "公开";
+    if (preview.title) preview.title.textContent = form.roomName.value.trim() || "Unnamed Room";
+    if (preview.description) preview.description.textContent = form.description.value.trim() || "Add a description for your room.";
+    if (preview.visibility) preview.visibility.textContent = form.visibility.value === "private" ? "Private" : "Public";
     if (preview.mood) preview.mood.textContent = form.mood.value;
     syncAiSummaries();
   };
 
   const defaultState = () => {
-    form.roomName.value = "月光停泊处";
+    form.roomName.value = "Moonlight Anchorage";
     form.roomType.value = "room-insomnia";
-    form.description.value = "一个适合深夜停靠、慢慢整理想法和情绪的小房间。";
+    form.description.value = "A small room suitable for late-night stays, slowly organizing thoughts and emotions.";
     form.visibility.value = "private";
     form.mood.value = "Moonlit / tender / ambient";
     form.allowMultiAi.checked = false;
-    form.welcome.value = "欢迎来到这里。你可以不用把一切整理清楚，我们先从你现在最想说的一点开始。";
-    form.prompt.value = "你是一个擅长陪伴深夜情绪、帮助用户慢慢说清楚感受的 AI。你的回复应当温柔、清晰、不过分催促结论。";
+    form.welcome.value = "Welcome here. You dont need to have everything sorted out. Lets start with what you want to say most right now.";
+    form.prompt.value = "You are an AI skilled in accompanying late-night emotions and helping users articulate their feelings slowly. Your responses should be gentle, clear, and not overly pushy for conclusions.";
     aiList.innerHTML = "";
     aiCounter = 0;
-    addAiCard({ name: "夜灯", style: "温柔、缓慢、陪伴型" });
-    addAiCard({ name: "慢云", style: "安静、清晰、低刺激" });
+    addAiCard({ name: "Night Light", style: "gentle, slow, companion-style" });
+    addAiCard({ name: "Slow Cloud", style: "quiet, clear, low-stimulation" });
     updatePreview();
   };
 
@@ -176,7 +176,7 @@
     const meta = typeMeta[roomType] || typeMeta["room-insomnia"];
     const baseRoom = roomCatalog[roomType] || {};
     const aiRoster = readAiRoster();
-    const name = form.roomName.value.trim() || "未命名房间";
+    const name = form.roomName.value.trim() || "Unnamed Room";
     const description = form.description.value.trim();
     const now = new Date().toISOString();
     const roomId = `user-room-${slugify(name)}-${Date.now().toString(36)}`;
@@ -205,7 +205,7 @@
     const list = readJson(libraryKey, []);
     list.unshift(item);
     writeJson(libraryKey, list);
-    showToast("已创建新的房间");
+    showToast("Room created");
     window.location.href = href;
   };
 

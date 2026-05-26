@@ -58,7 +58,7 @@
   };
 
   const setupSidebarAccountMenu = () => {
-    const logoutTool = document.querySelector('.sidebar-tools .tool[aria-label="退出登录"]');
+    const logoutTool = document.querySelector('.sidebar-tools .tool[aria-label="Logout"]');
     if (!logoutTool) return;
 
     logoutTool.classList.add("tool-avatar");
@@ -77,10 +77,10 @@
       menu.className = "sidebar-account-menu";
       menu.innerHTML = `
         <div class="sidebar-account-menu-copy">
-          <strong>当前账号</strong>
-          <span>准备离开 AI Room 吗？</span>
+          <strong>Current Account</strong>
+          <span>Ready to leave AI Room?</span>
         </div>
-        <a class="sidebar-account-action" href="./logout.html">退出登录</a>
+        <a class="sidebar-account-action" href="./logout.html">Logout</a>
       `;
       logoutTool.insertAdjacentElement("afterend", menu);
     }
@@ -211,8 +211,8 @@
 
     const aria = cleanTitle(item.getAttribute("aria-label"));
     if (!aria) return "";
-    if (aria === "随机进入") return "";
-    return aria.replace(/^进入/, "").trim();
+    if (aria === "Random Entry") return "";
+    return aria.replace(/^Enter/, "").trim();
   };
 
   const currentPath = window.location.pathname;
@@ -271,7 +271,7 @@
     item.setAttribute("href", href);
   });
 
-  document.querySelectorAll('.sidebar-tools .tool[aria-label="意识档案"]').forEach((item) => {
+  document.querySelectorAll('.sidebar-tools .tool[aria-label="Profile"]').forEach((item) => {
     item.remove();
   });
 

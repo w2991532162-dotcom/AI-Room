@@ -8,52 +8,52 @@
       id: "room-insomnia",
       href: "./room-insomnia.html",
       coverImage: "./hall-deepnight.png",
-      name: "深夜树洞",
-      summary: "有人在这里倾听，适合在深夜慢慢放下情绪，再继续往里说。",
-      shortSummary: "有人在这里倾听",
-      metaPrimary: "失眠空间",
-      metaSecondary: "128 次对话",
-      sideLabel: "进入中",
-      sideValue: "最近活跃",
+      name: "Midnight Tree Hole",
+      summary: "Someone is listening here, suitable for slowly releasing emotions at night before continuing.",
+      shortSummary: "Someone is listening here",
+      metaPrimary: "Insomnia Space",
+      metaSecondary: "128 conversations",
+      sideLabel: "Entering",
+      sideValue: "Recently Active",
       avatars: ["./ai-avatar-insomnia.svg", "./ai-avatar-random.svg", "./ai-avatar-loneliness.svg"]
     },
     {
       id: "room-love",
       href: "./room-love.html",
       coverImage: "./hall-philosophy-v2.png",
-      name: "哲学思辨馆",
-      summary: "关于生命、意义与关系，适合慢速拆解问题本身。",
-      shortSummary: "关于生命、意义",
-      metaPrimary: "思辨讨论",
-      metaSecondary: "72 次对话",
-      sideLabel: "常访问",
-      sideValue: "2 AI 在线",
+      name: "Philosophy Hall",
+      summary: "About life, meaning and relationships. Suitable for slowly dissecting problems.",
+      shortSummary: "About life, meaning",
+      metaPrimary: "Philosophical Discussion",
+      metaSecondary: "72 conversations",
+      sideLabel: "Frequently Visited",
+      sideValue: "2 AIs Online",
       avatars: ["./ai-avatar-love.svg", "./ai-avatar-knowledge.svg", "./ai-avatar-memory.svg"]
     },
     {
       id: "room-crowd",
       href: "./room-crowd.html",
       coverImage: "./hall-crowd.png",
-      name: "灵感碰撞场",
-      summary: "三个 AI 同时参与，适合脑暴和快速扩展方向。",
-      shortSummary: "三个 AI 正在头脑风暴",
-      metaPrimary: "创意空间",
-      metaSecondary: "183 次对话",
-      sideLabel: "最活跃",
-      sideValue: "3 AI 在线",
+      name: "Inspiration Collision Field",
+      summary: "Three AIs participating simultaneously. Suitable for brainstorming and rapid expansion.",
+      shortSummary: "Three AIs are brainstorming",
+      metaPrimary: "Creative Space",
+      metaSecondary: "183 conversations",
+      sideLabel: "Most Active",
+      sideValue: "3 AIs Online",
       avatars: ["./ai-avatar-crowd.svg", "./ai-avatar-future.svg", "./ai-avatar-knowledge.svg"]
     },
     {
       id: "room-future",
       href: "./room-future.html",
       coverImage: "./hall-future.png",
-      name: "未来想象局",
-      summary: "一起把模糊的未来设想推进成完整世界观。",
-      shortSummary: "我们一起构建",
-      metaPrimary: "未来构建",
-      metaSecondary: "156 次对话",
-      sideLabel: "持续进入",
-      sideValue: "结构型房间",
+      name: "Future Imagination Bureau",
+      summary: "Push vague future visions into complete worldviews together.",
+      shortSummary: "Let's build together",
+      metaPrimary: "Future Building",
+      metaSecondary: "156 conversations",
+      sideLabel: "Continuously Entering",
+      sideValue: "Structured Room",
       avatars: ["./ai-avatar-future.svg", "./ai-avatar-crowd.svg", "./ai-avatar-love.svg"]
     }
   ];
@@ -63,52 +63,52 @@
       id: "room-knowledge",
       href: "./room-knowledge.html?owner=me",
       coverImage: "./hall-knowledge.png",
-      name: "星光收藏家",
-      description: "记录美好与灵感，把零散问题慢慢整理成可沉淀的内容。",
-      shortSummary: "记录美好与灵感",
-      metaPrimary: "知识整理",
-      metaSecondary: "28 次对话",
-      sideLabel: "你创建的",
-      sideValue: "公开中",
+      name: "Starlight Collector",
+      description: "Record beauty and inspiration, organize scattered thoughts into meaningful content.",
+      shortSummary: "Record beauty and inspiration",
+      metaPrimary: "Knowledge Organization",
+      metaSecondary: "28 conversations",
+      sideLabel: "Created by You",
+      sideValue: "Public",
       visibility: "public"
     },
     {
       id: "room-memory",
       href: "./room-memory.html?owner=me",
       coverImage: "./hall-anonymous.png",
-      name: "梦境记录本",
-      description: "记录梦境碎片与片段感受，保留模糊的图像和回声。",
-      shortSummary: "记录梦境碎片",
-      metaPrimary: "梦境收纳",
-      metaSecondary: "16 次对话",
-      sideLabel: "你创建的",
-      sideValue: "私密房间",
+      name: "Dream Journal",
+      description: "Record dream fragments and feelings, preserve vague images and echoes.",
+      shortSummary: "Record dream fragments",
+      metaPrimary: "Dream Collection",
+      metaSecondary: "16 conversations",
+      sideLabel: "Created by You",
+      sideValue: "Private Room",
       visibility: "private"
     },
     {
       id: "room-loneliness",
       href: "./room-loneliness.html?owner=me",
       coverImage: "./hall-emotion.png",
-      name: "情绪收容所",
-      description: "安放所有情绪与留白，适合慢速陪伴和柔和表达。",
-      shortSummary: "安放所有情绪",
-      metaPrimary: "情绪陪伴",
-      metaSecondary: "33 次对话",
-      sideLabel: "你创建的",
-      sideValue: "1 AI 在线",
+      name: "Emotion Sanctuary",
+      description: "Place all emotions and silence. Suitable for slow companionship and gentle expression.",
+      shortSummary: "Place all emotions",
+      metaPrimary: "Emotional Companion",
+      metaSecondary: "33 conversations",
+      sideLabel: "Created by You",
+      sideValue: "1 AI Online",
       visibility: "private"
     },
     {
       id: "room-random",
       href: "./room-random.html?owner=me",
       coverImage: "./hall-floating.png",
-      name: "AI 随想集",
-      description: "让灵感自由流动，记录所有还没整理好的想法和片段。",
-      shortSummary: "想法的自由流动",
-      metaPrimary: "个人草稿",
-      metaSecondary: "9 次对话",
-      sideLabel: "你创建的",
-      sideValue: "持续编辑",
+      name: "AI Collection",
+      description: "Let inspiration flow freely, record all unorganized thoughts and fragments.",
+      shortSummary: "Free flow of thoughts",
+      metaPrimary: "Personal Draft",
+      metaSecondary: "9 conversations",
+      sideLabel: "Created by You",
+      sideValue: "Continuously Editing",
       visibility: "private"
     }
   ];
@@ -169,13 +169,13 @@
     id: item.id,
     href: item.href || "./my-room.html?owner=me",
     coverImage: item.coverImage || "./hall-floating.png",
-    name: item.name || "我的房间",
-    description: item.description || "这是你另存下来的房间配置",
-    shortSummary: summarize(item.description, "这是你另存下来的房间"),
-    metaPrimary: item.visibility === "private" ? "私密房间" : "公开房间",
-    metaSecondary: "刚刚保存",
-    sideLabel: "你创建的",
-    sideValue: item.visibility === "private" ? "私密" : "公开",
+    name: item.name || "My Room",
+    description: item.description || "This is your saved room configuration",
+    shortSummary: summarize(item.description, "This is your saved room"),
+    metaPrimary: item.visibility === "private" ? "Private Room" : "Public Room",
+    metaSecondary: "Just saved",
+    sideLabel: "Created by You",
+    sideValue: item.visibility === "private" ? "Private" : "Public",
     visibility: item.visibility === "private" ? "private" : "public",
     isUserCreated: true
   });
@@ -196,7 +196,7 @@
 
   const pinButtonHtml = (roomId) => `
     <button class="my-room-pin-button ${pinnedSet.has(roomId) ? "is-pinned" : ""}" type="button" data-pin-room="${escapeHtml(roomId)}">
-      <span>${pinnedSet.has(roomId) ? "已置顶" : "置顶"}</span>
+      <span>${pinnedSet.has(roomId) ? "Pinned" : "Pin"}</span>
     </button>
   `;
 
@@ -226,7 +226,7 @@
         <strong>${escapeHtml(item.name)}</strong>
         <p>${escapeHtml(item.shortSummary)}</p>
         <div class="my-room-card-meta">
-          <em>${escapeHtml(item.visibility === "private" ? "私密" : "公开")}</em>
+          <em>${escapeHtml(item.visibility === "private" ? "Private" : "Public")}</em>
         </div>
       </div>
     </a>
@@ -280,12 +280,12 @@
     if (!list || !head) return;
 
     const title = head.textContent.trim();
-    if (title === "我进入的房间") {
+    if (title === "Rooms I Entered" || title === "我进入的房间") {
       list.innerHTML = enteredList.map(renderEnteredListItem).join("");
       return;
     }
 
-    if (title === "我创建的房间") {
+    if (title === "Rooms I Created" || title === "我创建的房间") {
       list.innerHTML = createdRooms.map(renderCreatedListItem).join("");
     }
   };

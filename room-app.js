@@ -30,8 +30,8 @@
     gemini: "Gemini Flash",
     groq: "Groq / Llama",
     deepseek: "DeepSeek",
-    "claude-style": "Claude 风格模拟",
-    local: "本地模拟"
+    "claude-style": "Claude Style Simulation",
+    local: "Local Simulation"
   };
 
   const readJson = (key, fallback) => {
@@ -118,7 +118,7 @@
     return {
       name: (item.name || "").trim() || `AI ${index + 1}`,
       role,
-      prompt: (item.prompt || "").trim() || [effectiveRoom.prompt, role ? `角色补充：${role}` : ""].filter(Boolean).join("\n"),
+      prompt: (item.prompt || "").trim() || [effectiveRoom.prompt, role ? `Role Supplement: ${role}` : ""].filter(Boolean).join("\n"),
       style: (item.style || "").trim() || effectiveRoom.style || "",
       provider,
       model: (item.model || "").trim() || defaultModelForProvider(provider),
@@ -163,7 +163,7 @@
 
   const welcomeConversation = () => ({
     id: uid("conv"),
-    title: "新的对话",
+    title: "New Conversation",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     messages: [
@@ -295,12 +295,12 @@
               <div class="room-chat-title-en">${escapeHtml(titleMeta[room.id] || "AI ROOM")}</div>
             </div>
             <div class="room-chat-toolbar">
-              <button class="room-icon-button" type="button" data-action="toggle-history" aria-label="查看历史">
+              <button class="room-icon-button" type="button" data-action="toggle-history" aria-label="View History">
                 <svg class="room-filled-icon" viewBox="0 0 1024 1024" aria-hidden="true">
                   <path d="M733.013333 503.893333h-185.173333V264.106667a35.84 35.84 0 0 0-72.106667 0v240.213333a72.106667 72.106667 0 0 0 72.106667 72.106667h185.173333a35.84 35.84 0 0 0 0-72.106667z m90.026667 319.146667A439.893333 439.893333 0 1 1 341.333333 106.666667a439.893333 439.893333 0 0 1 481.706667 716.373333zM512 0a512 512 0 1 0 512 512A512 512 0 0 0 512 0z"></path>
                 </svg>
               </button>
-              <button class="room-icon-button" type="button" data-action="toggle-settings" aria-label="房间设置">
+              <button class="room-icon-button" type="button" data-action="toggle-settings" aria-label="Room Settings">
                 <svg class="room-filled-icon" viewBox="0 0 1024 1024" aria-hidden="true">
                   <path d="M469.333333 60.693333a85.333333 85.333333 0 0 1 85.333334 0l326.826666 188.714667a85.333333 85.333333 0 0 1 42.666667 73.898667v377.386666a85.333333 85.333333 0 0 1-42.666667 73.898667L554.666667 963.306667a85.333333 85.333333 0 0 1-85.333334 0L142.506667 774.592a85.333333 85.333333 0 0 1-42.666667-73.898667v-377.386666a85.333333 85.333333 0 0 1 42.666667-73.898667z m42.666667 73.898667L185.173333 323.306667v377.386666L512 889.408l326.826667-188.714667v-377.386666L512 134.592zM512 341.333333a170.666667 170.666667 0 1 1 0 341.333334 170.666667 170.666667 0 0 1 0-341.333334z m0 85.333334a85.333333 85.333333 0 1 0 0 170.666666 85.333333 85.333333 0 0 0 0-170.666666z"></path>
                 </svg>
@@ -313,12 +313,12 @@
               class="room-composer-input"
               data-role="composer-input"
               rows="4"
-              placeholder="把你想说的话留在这里，按 Enter 发送，Shift + Enter 换行"
+              placeholder="Leave your message here, press Enter to send, Shift + Enter for new line"
             ></textarea>
             <div class="room-composer-bottom">
               <div class="room-suggestion-row" data-role="suggestions"></div>
               <div class="room-composer-actions">
-                <button class="room-send-button" type="submit" data-role="send-button" aria-label="发送" disabled>
+                <button class="room-send-button" type="submit" data-role="send-button" aria-label="Send" disabled>
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 18V6"></path>
                     <path d="M7.5 10.5 12 6l4.5 4.5"></path>
@@ -330,16 +330,16 @@
         </div>
       </section>
       <div class="room-overlay-shell" data-role="history-overlay">
-        <button class="room-overlay-backdrop" type="button" data-action="close-overlays" aria-label="关闭浮层"></button>
+        <button class="room-overlay-backdrop" type="button" data-action="close-overlays" aria-label="Close Overlay"></button>
         <aside class="room-overlay-panel room-history-panel">
           <div class="room-history-top">
             <div>
               <div class="room-history-label">Current Room</div>
-              <h2 class="room-history-title">历史记录</h2>
+              <h2 class="room-history-title">History</h2>
             </div>
             <div class="room-overlay-actions">
-              <button class="room-action-button" type="button" data-action="new-conversation">新对话</button>
-              <button class="room-icon-button" type="button" data-action="close-overlays" aria-label="关闭历史">
+              <button class="room-action-button" type="button" data-action="new-conversation">New Conversation</button>
+              <button class="room-icon-button" type="button" data-action="close-overlays" aria-label="Close History">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 6l12 12"></path>
                   <path d="M18 6 6 18"></path>
@@ -351,14 +351,14 @@
         </aside>
       </div>
       <div class="room-overlay-shell" data-role="settings-overlay">
-        <button class="room-overlay-backdrop" type="button" data-action="close-overlays" aria-label="关闭浮层"></button>
+        <button class="room-overlay-backdrop" type="button" data-action="close-overlays" aria-label="Close Overlay"></button>
         <aside class="room-overlay-panel room-settings-panel">
           <div class="room-settings-top">
             <div>
               <div class="room-history-label">Room Controls</div>
-              <h2 class="room-history-title">设置</h2>
+              <h2 class="room-history-title">Settings</h2>
             </div>
-            <button class="room-icon-button" type="button" data-action="close-overlays" aria-label="关闭设置">
+            <button class="room-icon-button" type="button" data-action="close-overlays" aria-label="Close Settings">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M6 6l12 12"></path>
                 <path d="M18 6 6 18"></path>
@@ -368,31 +368,31 @@
           <form class="room-settings-form" data-role="settings-form">
             <div class="room-settings-scroll">
               <label class="room-field">
-                <span>房间名</span>
+                <span>Room Name</span>
                 <input type="text" name="roomName" />
               </label>
               <label class="room-field room-field-inline">
                 <input type="checkbox" name="allowMultiAi" />
-                <span>允许多个 AI 连续回复</span>
+                <span>Allow Multiple AI Responses</span>
               </label>
               ${isOwnedRoom ? `
               <label class="room-field">
-                <span>公开状态</span>
+                <span>Visibility</span>
                 <select name="visibility">
-                  <option value="public">公开</option>
-                  <option value="private">私密</option>
+                  <option value="public">Public</option>
+                  <option value="private">Private</option>
                 </select>
               </label>
               ` : ""}
               <div class="room-ai-list-head">
-                <span class="room-settings-section-title">AI 列表</span>
-                <button class="room-ghost-button" type="button" data-action="add-ai">增加AI</button>
+                <span class="room-settings-section-title">AI List</span>
+                <button class="room-ghost-button" type="button" data-action="add-ai">Add AI</button>
               </div>
               <div class="room-ai-list" data-role="ai-list"></div>
             </div>
             <div class="room-settings-actions">
-              <button class="room-ghost-button" type="button" data-action="reset-settings">恢复默认</button>
-              <button class="room-action-button" type="submit">${shouldSaveAsMine ? "另存为我的房间" : "保存设置"}</button>
+              <button class="room-ghost-button" type="button" data-action="reset-settings">Reset to Default</button>
+              <button class="room-action-button" type="submit">${shouldSaveAsMine ? "Save as My Room" : "Save Settings"}</button>
             </div>
           </form>
         </aside>
@@ -508,7 +508,7 @@
     const library = readUserRoomLibrary();
     library.unshift(nextRoom);
     writeUserRoomLibrary(library);
-    showSettingsToast("已另存为我的房间");
+    showSettingsToast("Saved as My Room");
   };
 
   const renderSuggestions = () => {
@@ -522,7 +522,7 @@
 
   const updateConversationTitle = (conversation) => {
     const firstUser = conversation.messages.find((message) => message.role === "user");
-    conversation.title = firstUser ? firstUser.content.slice(0, 18) || "新的对话" : "新的对话";
+    conversation.title = firstUser ? firstUser.content.slice(0, 18) || "New Conversation" : "New Conversation";
     conversation.updatedAt = new Date().toISOString();
   };
 
@@ -535,8 +535,8 @@
         const latest = item.messages[item.messages.length - 1];
         return `
           <button class="room-history-item ${active}" type="button" data-conversation-id="${escapeHtml(item.id)}">
-            <strong>${escapeHtml(item.title || "新的对话")}</strong>
-            <span>${escapeHtml((latest?.content || "").slice(0, 38) || "还没有消息")}</span>
+            <strong>${escapeHtml(item.title || "New Conversation")}</strong>
+            <span>${escapeHtml((latest?.content || "").slice(0, 38) || "No messages yet")}</span>
           </button>
         `;
       })
@@ -558,7 +558,7 @@
   const renderAiList = () => {
     el.aiList.innerHTML = state.settings.aiRoster
       .map((item, index) => {
-        const name = item.name || `未命名 AI ${index + 1}`;
+        const name = item.name || `Unnamed AI ${index + 1}`;
         return `
           <details class="room-ai-card">
             <summary class="room-ai-summary">
@@ -571,19 +571,19 @@
             </summary>
             <div class="room-ai-fields">
               <label class="room-field">
-                <span>AI名称</span>
+                <span>AI Name</span>
                 <input type="text" data-ai-field="name" value="${escapeHtml(item.name || "")}" />
               </label>
               <label class="room-field">
-                <span>AI的Prompt</span>
+                <span>AI Prompt</span>
                 <textarea data-ai-field="prompt" rows="4">${escapeHtml(item.prompt || "")}</textarea>
               </label>
               <label class="room-field">
-                <span>回复风格（可选）</span>
+                <span>Response Style (Optional)</span>
                 <textarea data-ai-field="style" rows="3">${escapeHtml(item.style || "")}</textarea>
               </label>
               <label class="room-field">
-                <span>AI模型选择</span>
+                <span>AI Model Selection</span>
                 <select data-ai-field="provider">
                   ${Object.entries(providerLabels)
                     .map(([value, label]) => `<option value="${escapeHtml(value)}" ${item.provider === value ? "selected" : ""}>${escapeHtml(label)}</option>`)
@@ -591,7 +591,7 @@
                 </select>
               </label>
               <label class="room-field">
-                <span>AI API（可选）</span>
+                <span>AI API (Optional)</span>
                 <input type="password" data-ai-field="apiKey" value="${escapeHtml(item.apiKey || "")}" autocomplete="off" />
               </label>
             </div>
@@ -646,7 +646,7 @@
     form.roomName.value = state.settings.roomName;
     form.roomName.disabled = !canRenameRoom;
     form.roomName.readOnly = !canRenameRoom;
-    form.roomName.title = canRenameRoom ? "" : "该房间名称不可修改";
+    form.roomName.title = canRenameRoom ? "" : "Room name cannot be modified";
     form.allowMultiAi.checked = !!state.settings.allowMultiAi;
     if (form.visibility) {
       form.visibility.value = state.settings.visibility || "public";
@@ -659,22 +659,22 @@
 
     const createText = (speaker, index) => {
       if (speaker.provider === "claude-style") {
-        return `${speaker.name}：我先接住你刚才那句话。你提到“${messageText.slice(0, 30)}”，这背后像是有一层更细的感受还没被说完。如果你愿意，我们可以先不求结论，只把它再描述具体一点。`;
+        return `${speaker.name}: Let me hold onto what you just said. You mentioned "${messageText.slice(0, 30)}". There seems to be a finer feeling beneath it that hasn't been fully expressed. If you'd like, we can skip conclusions for now and just describe it more concretely.`;
       }
 
       if (speaker.provider === "deepseek") {
-        return `${speaker.name}：我先把你的问题拆成两层。第一层是你字面上在问的“${messageText.slice(0, 24)}”；第二层是你真正想确认的判断依据。要不要我们先界定一下核心概念，再继续往下推？`;
+        return `${speaker.name}: Let me break your question into two layers. The first layer is what you literally asked "${messageText.slice(0, 24)}"; The second layer is the basis for judgment you really want to confirm. Shall we define the core concepts first, then continue?`;
       }
 
       if (speaker.provider === "gemini") {
-        return `${speaker.name}：先给你 ${index === 0 ? "一个主方向" : "一个补充方向"}。围绕“${messageText.slice(0, 24)}”，我们可以从场景、情绪、结构三个面向同时展开，这样会更容易把想法变具体。`;
+        return `${speaker.name}: Let me give you ${index === 0 ? "a main direction" : "a supplementary direction"}. Around "${messageText.slice(0, 24)}", we can explore from three dimensions: scene, emotion, and structure. This will make it easier to concretize ideas.`;
       }
 
       if (speaker.provider === "groq") {
-        return `${speaker.name}：我直接给你一个清晰版本。你现在最需要的，可能不是更多信息，而是先确定“${messageText.slice(0, 24)}”到底要解决什么，再决定下一步怎么做。`;
+        return `${speaker.name}: Let me give you a clear version directly. What you need most right now may not be more information, but first determining "${messageText.slice(0, 24)}" - what exactly needs to be solved, then deciding what to do next.`;
       }
 
-      return `${speaker.name}：我听见了。你刚才说到“${messageText.slice(0, 24)}”，我们可以继续往下聊，我会陪你把它一点点说清楚。`;
+      return `${speaker.name}: I heard you. You just mentioned "${messageText.slice(0, 24)}". We can continue the conversation. I will stay with you and help articulate it clearly.`;
     };
 
     return targets.map((speaker, index) => ({
@@ -696,13 +696,13 @@
     }));
 
     const systemPrompt = [
-      `你正在扮演 AI Room 里的房间 AI。`,
-      `房间名：${state.settings.roomName}`,
-      `AI名称：${aiConfig.name}`,
-      `基础 Prompt：${aiConfig.prompt}`,
-      `风格要求：${aiConfig.style || "保持自然、稳定、贴合房间氛围。"}`,
-      `当前模型来源：${aiConfig.provider}`,
-      `如果房间里有多个 AI，可在必要时只回复当前轮最合适的一位。`
+      `You are acting as the room AI in AI Room.`,
+      `Room Name: ${state.settings.roomName}`,
+      `AI Name: ${aiConfig.name}`,
+      `Base Prompt: ${aiConfig.prompt}`,
+      `Style Requirements: ${aiConfig.style || "Keep natural, stable, and fitting the room atmosphere."}`,
+      `Current Model Provider: ${aiConfig.provider}`,
+      `If there are multiple AIs in the room, you can respond only as the most appropriate one for the current round when necessary.`
     ].join("\n");
 
     return {
@@ -719,7 +719,7 @@
     const contents = [];
     if (systemPrompt) {
       contents.push({ role: "user", parts: [{ text: systemPrompt }] });
-      contents.push({ role: "model", parts: [{ text: "好的，我会遵守这个房间设定。" }] });
+      contents.push({ role: "model", parts: [{ text: "Understood, I will follow this room configuration." }] });
     }
 
     recentMessages.forEach((item) => {
@@ -793,7 +793,7 @@
         speaker: aiConfig.name || "Gemini",
         provider: aiConfig.provider,
         model: aiConfig.model,
-        content: content || "我想了一下，我们可以继续往下拆。"
+        content: content || "I thought about it, we can continue breaking it down."
       };
     }
 
@@ -809,7 +809,7 @@
         speaker: aiConfig.name || "Llama",
         provider: aiConfig.provider,
         model: aiConfig.model,
-        content: content || "我先给你一个更直接的回答。"
+        content: content || "Let me give you a more direct answer."
       };
     }
 
@@ -825,7 +825,7 @@
         speaker: aiConfig.name || "DeepSeek",
         provider: aiConfig.provider,
         model: aiConfig.model,
-        content: content || "我先把这个问题整理一下结构。"
+        content: content || "Let me organize this question into a structure."
       };
     }
 
@@ -847,7 +847,7 @@
     fillSettingsForm();
     persist();
     setStatus();
-    showSettingsToast("已保存当前设置");
+    showSettingsToast("Settings saved");
   };
 
   const createConversation = () => {
@@ -964,7 +964,7 @@
         fillSettingsForm();
         updateHeader();
         setStatus();
-        showSettingsToast("已恢复默认设置");
+        showSettingsToast("Default settings restored");
         return;
       }
 
